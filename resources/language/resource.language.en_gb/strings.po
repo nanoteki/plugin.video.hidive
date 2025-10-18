@@ -1,0 +1,137 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plugin.video.hidive\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-15 10:00+0000\n"
+"PO-Revision-Date: 2025-07-15 10:00+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgctxt "#32000"
+msgid "Login"
+msgstr "Login"
+
+msgctxt "#32001"
+msgid "Username"
+msgstr "Username"
+
+msgctxt "#32002"
+msgid "Password"
+msgstr "Password"
+
+msgctxt "#32003"
+msgid "Playback"
+msgstr "Playback"
+
+msgctxt "#32004"
+msgid "Preferred Audio Language"
+msgstr "Preferred Audio Language"
+
+msgctxt "#32005"
+msgid "Preferred Subtitle Language"
+msgstr "Preferred Subtitle Language"
+
+msgctxt "#32006"
+msgid "Enable Subtitles"
+msgstr "Enable Subtitles"
+
+msgctxt "#32007"
+msgid "Enable subtitles on audio fallback"
+msgstr "Enable subtitles on audio fallback"
+
+msgctxt "#32008"
+msgid "Debug"
+msgstr "Debug"
+
+msgctxt "#32009"
+msgid "Enable Debug Logging"
+msgstr "Enable Debug Logging"
+
+msgctxt "#32010"
+msgid "Subtitle Base Margin (pixels)"
+msgstr "Subtitle Base Margin (pixels)"
+
+msgctxt "#32011"
+msgid "Subtitle Vertical Spacing (pixels)"
+msgstr "Subtitle Vertical Spacing (pixels)"
+
+msgctxt "#32012"
+msgid "Subtitle Styling"
+msgstr "Subtitle Styling"
+
+msgctxt "#32013"
+msgid "Font"
+msgstr "Font"
+
+msgctxt "#32014"
+msgid "Font Size"
+msgstr "Font Size"
+
+msgctxt "#32015"
+msgid "Text Color"
+msgstr "Text Color"
+
+msgctxt "#32016"
+msgid "Outline Color"
+msgstr "Outline Color"
+
+msgctxt "#32017"
+msgid "Background Color"
+msgstr "Background Color"
+
+msgctxt "#32018"
+msgid "Bold Text"
+msgstr "Bold Text"
+
+msgctxt "#32019"
+msgid "Italic Text"
+msgstr "Italic Text"
+
+msgctxt "#32020"
+msgid "Outline Width"
+msgstr "Outline Width"
+
+msgctxt "#32021"
+msgid "Shadow Depth"
+msgstr "Shadow Depth"
+
+msgctxt "#32022"
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgctxt "#32023"
+msgid "Enable Dashboard Pagination"
+msgstr "Enable Dashboard Pagination"
+
+msgctxt "#32024"
+msgid "Load all available content pages for better content discovery"
+msgstr "Load all available content pages for better content discovery"
+
+msgctxt "#32025"
+msgid "Enable Enhanced Bucket Loading"
+msgstr "Enable Enhanced Bucket Loading"
+
+msgctxt "#32026"
+msgid "Use direct API calls for faster and more complete content loading"
+msgstr "Use direct API calls for faster and more complete content loading"
+
+msgctxt "#32027"
+msgid "Number of Content Categories"
+msgstr "Number of Content Categories"
+
+msgctxt "#32028"
+msgid "Number of content categories to display on main menu (5-15)"
+msgstr "Number of content categories to display on main menu (5-15)"
+
+msgctxt "#32029"
+msgid "Items per Category"
+msgstr "Items per Category"
+
+msgctxt "#32030"
+msgid "Number of items to load per content category (10-50)"
+msgstr "Number of items to load per content category (10-50)"
+

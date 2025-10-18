@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings version="1">
+    <section id="plugin.video.hidive">
+        <category id="account" label="32000">
+            <group id="1" label="32000">
+                <setting id="hidive_username" type="string" label="32001" help="">
+                    <level>0</level>
+                    <default/>
+                    <constraints>
+                        <allowempty>true</allowempty>
+                    </constraints>
+                    <control type="edit" format="string">
+                        <heading>32001</heading>
+                    </control>
+                </setting>
+                <setting id="hidive_password" type="string" label="32002" help="">
+                    <level>0</level>
+                    <default/>
+                    <constraints>
+                        <allowempty>true</allowempty>
+                    </constraints>
+                    <control type="edit" format="string">
+                        <heading>32002</heading>
+                        <hidden>true</hidden>
+                    </control>
+                </setting>
+                <setting id="auth_token" type="string" label="Auth Token" visible="false">
+                    <level>1</level>
+                    <default/>
+                    <control type="edit" format="string"/>
+                </setting>
+                <setting id="active_profile_id" type="string" label="Active Profile ID" visible="false">
+                    <level>1</level>
+                    <default/>
+                    <control type="edit" format="string"/>
+                </setting>
+            </group>
+        </category>
+        <category id="playback" label="32003">
+            <group id="1" label="32003">
+                <setting id="preferred_audio_language" type="string" label="32004" help="">
+                    <level>0</level>
+                    <default>English</default>
+                    <constraints>
+                        <options>
+                            <option label="English">English</option>
+                            <option label="Japanese">Japanese</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="string">
+                        <heading>32004</heading>
+                    </control>
+                </setting>
+                <setting id="enable_subtitles" type="boolean" label="32006" help="">
+                    <level>0</level>
+                    <default>false</default>
+                    <control type="toggle"/>
+                </setting>
+                <setting id="subtitle_fallback" type="boolean" label="32007" help="">
+                    <level>0</level>
+                    <default>true</default>
+                    <control type="toggle"/>
+                </setting>
+                <setting id="preferred_subtitle_language" type="string" label="32005" help="">
+                    <level>0</level>
+                    <default>English</default>
+                    <constraints>
+                        <options>
+                            <option label="English">English</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="string">
+                        <heading>32005</heading>
+                    </control>
+                    <dependencies>
+                        <dependency type="enable">
+                            <condition id="enable_subtitles" operator="is">true</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="subtitle_base_margin" type="integer" label="32010" help="">
+                    <level>1</level>
+                    <default>30</default>
+                    <constraints>
+                        <minimum>10</minimum>
+                        <maximum>200</maximum>
+                        <step>5</step>
+                    </constraints>
+                    <control type="slider" format="integer">
+                        <heading>32010</heading>
+                    </control>
+                    <dependencies>
+                        <dependency type="enable">
+                            <condition id="enable_subtitles" operator="is">true</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="subtitle_vertical_spacing" type="integer" label="32011" help="">
+                    <level>1</level>
+                    <default>20</default>
+                    <constraints>
+                        <minimum>10</minimum>
+                        <maximum>100</maximum>
+                        <step>5</step>
+                    </constraints>
+                    <control type="slider" format="integer">
+                        <heading>32011</heading>
+                    </control>
+                    <dependencies>
+                        <dependency type="enable">
+                            <condition id="enable_subtitles" operator="is">true</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+            </group>
+            <group id="2" label="32012">
+                <setting id="subtitle_font_name" type="string" label="32013" help="Choose subtitle font family">
+                    <level>0</level>
+                    <default>Comic Sans MS</default>
+                    <constraints>
+                        <options>
+                            <option label="Arial">Arial</option>
+                            <option label="Helvetica">Helvetica</option>
+                            <option label="Times New Roman">Times New Roman</option>
+                            <option label="Courier New">Courier New</option>
+                            <option label="Verdana">Verdana</option>
+                            <option label="Tahoma">Tahoma</option>
+                            <option label="Georgia">Georgia</option>
+                            <option label="Comic Sans MS">Comic Sans MS</option>
+                            <option label="Impact">Impact</option>
+                            <option label="Trebuchet MS">Trebuchet MS</option>
+                            <option label="Calibri">Calibri</option>
+                            <option label="Segoe UI">Segoe UI</option>
+                            <option label="Open Sans">Open Sans</option>
+                            <option label="Roboto">Roboto</option>
+                            <option label="Source Sans Pro">Source Sans Pro</option>
+                            <option label="Ubuntu">Ubuntu</option>
+                            <option label="DejaVu Sans">DejaVu Sans</option>
+                            <option label="Liberation Sans">Liberation Sans</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="string">
+                        <heading>32013</heading>
+                    </control>
+                    <dependencies>
+                        <dependency type="enable">
+                            <condition id="enable_subtitles" operator="is">true</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="subtitle_font_size" type="integer" label="32014" help="Subtitle font size in points">
+                    <level>0</level>
+                    <default>15</default>
+                    <constraints>
+                        <minimum>10</minimum>
+                        <maximum>36</maximum>
+                        <step>1</step>
+                    </constraints>
+                    <control type="slider" format="integer">
+                        <heading>32014</heading>
+                    </control>
+                    <dependencies>
+                        <dependency type="enable">
+                            <condition id="enable_subtitles" operator="is">true</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="subtitle_primary_color" type="string" label="32015" help="Primary text color">
+                    <level>0</level>
+                    <default>&amp;H00FFFFFF</default>
+                    <constraints>
+                        <options>
+                            <option label="White">&amp;H00FFFFFF</option>
+                            <option label="Yellow">&amp;H0000FFFF</option>
+                            <option label="Cyan">&amp;H00FFFF00</option>
+                            <option label="Green">&amp;H0000FF00</option>
+                            <option label="Magenta">&amp;H00FF00FF</option>
+                            <option label="Red">&amp;H000000FF</option>
+                            <option label="Blue">&amp;H00FF0000</option>
+                            <option label="Black">&amp;H00000000</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="string">
+                        <heading>32015</heading>
+                    </control>
+                    <dependencies>
+                        <dependency type="enable">
+                            <condition id="enable_subtitles" operator="is">true</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="subtitle_outline_color" type="string" label="32016" help="Outline/border color">
+                    <level>0</level>
+                    <default>&amp;H00000000</default>
+                    <constraints>
+                        <options>
+                            <option label="Black">&amp;H00000000</option>
+                            <option label="White">&amp;H00FFFFFF</option>
+                            <option label="Dark Gray">&amp;H00404040</option>
+                            <option label="Gray">&amp;H00808080</option>
+                            <option label="Red">&amp;H000000FF</option>
+                            <option label="Blue">&amp;H00FF0000</option>
+                            <option label="Green">&amp;H0000FF00</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="string">
+                        <heading>32016</heading>
+                    </control>
+                    <dependencies>
+                        <dependency type="enable">
+                            <condition id="enable_subtitles" operator="is">true</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="subtitle_back_color" type="string" label="32017" help="Background color (semi-transparent)">
+                    <level>1</level>
+                    <default>&amp;H80000000</default>
+                    <constraints>
+                        <options>
+                            <option label="Semi-transparent Black">&amp;H80000000</option>
+                            <option label="Transparent">&amp;H00000000</option>
+                            <option label="Semi-transparent Gray">&amp;H80808080</option>
+                            <option label="Semi-transparent White">&amp;H80FFFFFF</option>
+                            <option label="Opaque Black">&amp;HFF000000</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="string">
+                        <heading>32017</heading>
+                    </control>
+                    <dependencies>
+                        <dependency type="enable">
+                            <condition id="enable_subtitles" operator="is">true</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="subtitle_bold" type="boolean" label="32018" help="Make subtitle text bold">
+                    <level>0</level>
+                    <default>false</default>
+                    <control type="toggle"/>
+                    <dependencies>
+                        <dependency type="enable">
+                            <condition id="enable_subtitles" operator="is">true</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="subtitle_italic" type="boolean" label="32019" help="Make subtitle text italic">
+                    <level>0</level>
+                    <default>false</default>
+                    <control type="toggle"/>
+                    <dependencies>
+                        <dependency type="enable">
+                            <condition id="enable_subtitles" operator="is">true</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="subtitle_outline_width" type="integer" label="32020" help="Width of text outline/border">
+                    <level>1</level>
+                    <default>2</default>
+                    <constraints>
+                        <minimum>0</minimum>
+                        <maximum>5</maximum>
+                        <step>1</step>
+                    </constraints>
+                    <control type="slider" format="integer">
+                        <heading>32020</heading>
+                    </control>
+                    <dependencies>
+                        <dependency type="enable">
+                            <condition id="enable_subtitles" operator="is">true</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="subtitle_shadow_depth" type="integer" label="32021" help="Depth of text shadow">
+                    <level>1</level>
+                    <default>0</default>
+                    <constraints>
+                        <minimum>0</minimum>
+                        <maximum>5</maximum>
+                        <step>1</step>
+                    </constraints>
+                    <control type="slider" format="integer">
+                        <heading>32021</heading>
+                    </control>
+                    <dependencies>
+                        <dependency type="enable">
+                            <condition id="enable_subtitles" operator="is">true</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+            </group>
+        </category>
+
+        <category id="dashboard" label="32022">
+            <group id="1" label="32022">
+                <setting id="enable_dashboard_pagination" type="boolean" label="32023" help="32024">
+                    <level>0</level>
+                    <default>true</default>
+                    <control type="toggle"/>
+                </setting>
+                <setting id="enable_enhanced_bucket_loading" type="boolean" label="32025" help="32026">
+                    <level>0</level>
+                    <default>true</default>
+                    <control type="toggle"/>
+                </setting>
+                <setting id="dashboard_buckets_count" type="integer" label="32027" help="32028">
+                    <level>1</level>
+                    <default>10</default>
+                    <constraints>
+                        <minimum>5</minimum>
+                        <maximum>15</maximum>
+                        <step>1</step>
+                    </constraints>
+                    <control type="slider" format="integer">
+                        <heading>32027</heading>
+                    </control>
+                </setting>
+                <setting id="dashboard_entries_per_bucket" type="integer" label="32029" help="32030">
+                    <level>1</level>
+                    <default>25</default>
+                    <constraints>
+                        <minimum>10</minimum>
+                        <maximum>50</maximum>
+                        <step>5</step>
+                    </constraints>
+                    <control type="slider" format="integer">
+                        <heading>32029</heading>
+                    </control>
+                </setting>
+            </group>
+        </category>
+
+        <category id="debug" label="32008">
+            <group id="1" label="32008">
+                <setting id="enable_debug_logging" type="boolean" label="32009" help="">
+                    <level>0</level>
+                    <default>false</default>
+                    <control type="toggle"/>
+                </setting>
+            </group>
+        </category>
+    </section>
+</settings>
